@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight converter</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+         background-color: lightblue;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         min-height: 100vh;
+      }
+      .container{
+          background-color: white;
+          width: 800px;
+          height: 500px;
+           border-radius: 10px;
+           text-align: center;
+      }
+      .header{
+        background-color: blue;
+        border-radius: 11px 11px 0px 0px;
+        color: white
+        ;
+        font-size: 40px;
+        padding: 12px;
+        margin-bottom: 10px
+      }
+      label{
+        display: block;
+        font-size: 33px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      input{
+        width: 80%;
+        padding: 20px;
+        margin-top: 20px;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        border-bottom: 3px solid aquamarine;
+        font-size: 20px;
+        text-align: center;
+      }
+      span{
+        font-size: 30px;
+        font-weight: 700;
+        display: block;
+        margin-top: 20px
+       
+      }
+      #output{
+        margin-top: 20px;
+        font-size: 40px
+         
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="header"><h1>Weight Converter</h1></div>
+         <div class="inputs">
+            <label for="input" id="input-label">Weight In KG</label>
+            <input type="text" id="input" placeholder="Enter the your Weight" autocomplete="off">
+         </div>
+         <div class="output">
+           <span> Weight in pound's is :</span>  <p id="output">0</p>
+         </div>
+    </div>
+    <script>
+         const input = document.querySelector('#input');
+         const output = document.querySelector('#output');
+
+         input.addEventListener("input",()=>{
+            let val = input.value;
+            let out = val*2.2;
+            output.innerHTML = out.toFixed(2);
+         })
+    </script>
+</body>
+</html>
